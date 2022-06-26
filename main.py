@@ -7,16 +7,16 @@ from coordinates import *
 # Constant values
 HEIGHT = 10  # Póki co ustawiłem jak stałe wartości ale jak dorobię funkcję do zmiany rozmiaru
 WIDTH = 10   # planszy to to zmienię
-BLUE = (57,197,243)
+BLUE = (57, 197, 243)
 
 
 # Functions
 
-def game_flow(name):
+def game_flow():
     names = get_user_names()
 
 
-def colored(rgb, text): # RGB Colors function
+def colored(rgb, text):  # RGB Colors function
     r = rgb[0]
     g = rgb[1]
     b = rgb[2]
