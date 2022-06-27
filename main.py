@@ -13,7 +13,7 @@ GREEN = (71, 192, 70)
 
 # Functions
 
-def game_flow():
+def game_flow(number_of_players=2):
     player_names = get_player_names()
 
 
