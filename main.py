@@ -1,6 +1,7 @@
 from board import *
 from menu import *
 from tests import *
+from playsound import playsound
 from coordinates import *
 
 # Constant values
@@ -146,11 +147,13 @@ water = colored(BLUE, 'W')
 grid_friendly = [[water] * WIDTH for i in range(HEIGHT)]
 grid_enemy = [[water] * WIDTH for i in range(HEIGHT)]
 
-draw_grid(WIDTH, grid_friendly, 1)
+
+#draw_grid(WIDTH, grid_friendly, 1)
 place_ships(3, (3, 8), (3, 5), "V", 2)
 draw_grid(WIDTH, grid_enemy, 1)
 # print(list(alphabet.keys())[list(alphabet.values()).index("A")])
 # Press the green button in the gutter to run the script.
+playsound(u"sounds/background.mp3")
 if __name__ == '__main__':
     test()
 
