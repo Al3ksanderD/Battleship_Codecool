@@ -14,7 +14,7 @@ GREEN = (71, 192, 70)
 # Functions
 
 def game_flow():
-    names = get_user_names()
+    player_names = get_player_names()
 
 
 def colored(rgb, text):  # RGB Colors function

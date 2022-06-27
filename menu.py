@@ -1,3 +1,3 @@
-def get_user_names():
+def get_player_names():
     pass
 
