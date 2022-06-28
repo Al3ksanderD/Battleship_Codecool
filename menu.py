@@ -3,12 +3,15 @@ from clint.textui import colored
 import pyfiglet
 import sys
 
-def welcom():
-  welcom = pyfiglet.figlet_format("WELCOM IN BATTLESHIP !", font = "slant")
-  print(colored.red(welcom))
-  time.sleep(1)
 
-welcom()
+def welcome():
+    welcome_caption = pyfiglet.figlet_format("WELCOME IN BATTLESHIP !", font="slant")
+    print(colored.red(welcome))
+    time.sleep(1)
+
+
+welcome()
+
 
 def menu():
     print("****** MAIN MENU ******\n")
@@ -22,18 +25,20 @@ def menu():
     print("4. EXIT\n")
     time.sleep(1)
 
+
 menu()
 
 option = int(input("Please choose from presented options: "))
 
+
 def goodbye():
-  goodbye = pyfiglet.figlet_format("GOODBYE !", font="slant")
-  print(colored.red(goodbye))
-  sys.exit()
-        
-goodbye() 
+    goodbye_caption = pyfiglet.figlet_format("GOODBYE !", font="slant")
+    print(colored.red(goodbye))
+    sys.exit()
+
+
+goodbye()
 
 
 def get_player_names():
     pass
-
