@@ -27,7 +27,7 @@ menu()
 option = int(input("Please choose from presented options: "))
 
 def goodbye():
-  goodbye = pyfiglet.figlet_format("GOODBYE !", font = "slant")
+  goodbye = pyfiglet.figlet_format("GOODBYE !", font="slant")
   print(colored.red(goodbye))
   sys.exit()
         
