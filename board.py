@@ -4,3 +4,6 @@ def initialise_empty_board(dimensions):
         for column in range(dimensions):
             board[row][column] = 0
     return board
+
+def display_board(board):
+    pass
