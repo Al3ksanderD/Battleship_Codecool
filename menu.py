@@ -26,6 +26,13 @@ menu()
 
 option = int(input("Please choose from presented options: "))
 
+def get_playername():
+  playername1 = input("Player one, please enter your name: ")
+  playername2 = input("Player two, please enter your name: ")
+  print("Hello", playername1, ",", playername2, "let\'s play the BATTLESHIP game ! ") 
+
+get_playername()
+
 def goodbye():
   goodbye = pyfiglet.figlet_format("GOODBYE !", font = "slant")
   print(colored.red(goodbye))
@@ -34,6 +41,5 @@ def goodbye():
 goodbye() 
 
 
-def get_player_names():
-    pass
+
 
