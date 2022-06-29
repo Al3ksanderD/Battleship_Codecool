@@ -10,9 +10,6 @@ def welcome():
     time.sleep(1)
 
 
-welcome()
-
-
 def menu():
     print("****** MAIN MENU ******\n")
     time.sleep(1)
@@ -26,18 +23,13 @@ def menu():
     time.sleep(1)
 
 
-menu()
-
-option = int(input("Please choose from presented options: "))
+# option = int(input("Please choose from presented options: "))
 
 
 def goodbye():
     goodbye_caption = pyfiglet.figlet_format("GOODBYE !", font="slant")
     print(colored.red(goodbye))
     sys.exit()
-
-
-goodbye()
 
 
 def get_player_names():

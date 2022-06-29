@@ -21,8 +21,12 @@ alphabet = {
 
 # Functions
 
-def game_flow(number_of_players=2):
+def game_flow():
+    welcome()
+    menu()
     player_names = get_player_names()
+    boards = [for player in player_names: initialise_empty_board()]
+    display_board(board)
 
 
 def colored(rgb, text):  # RGB Colors function
@@ -155,6 +159,7 @@ draw_grid(WIDTH, grid_enemy, 1)
 # Press the green button in the gutter to run the script.
 playsound(u"sounds/background.mp3")
 if __name__ == '__main__':
-    test()
+    game_flow()
+    # test()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
