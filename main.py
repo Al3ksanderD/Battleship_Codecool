@@ -17,16 +17,22 @@ alphabet = {
         14: 'N', 15: 'O', 16: 'P', 17: 'Q', 18: 'R', 19: 'S', 20: 'T', 21: 'U', 22: 'V', 23: 'W', 24: 'X', 25: 'Y',
         26: 'Z'
         }
-
+AI_names = ["Hermes", "Pilot", "Pan Tadeusz", "Shooting Duck", "Houston", "Afrodyta", "Kira", "Dr. Strange",
+            "Jełgeniusz Majewski", "Jegomość Skroniawski", "Miss Burza", "Oragon", "Pretensyja", "Zhang",
+            "Joanna Jędrzejczyk", "Minor", "Per Haps", "Kierownik masztu", "Piekielna Matylka", "Hitchhiker"]
 
 # Functions
 
+
 def game_flow():
-    welcome()
-    menu()
-    player_names = get_player_names()
-    boards = [for player in player_names: initialise_empty_board()]
-    display_board(board)
+    try:
+        welcome()
+        game_mode = get_game_mode()
+        player_names = get_player_names(game_mode)
+        boards = [initialise_empty_board(player, 10) for player in player_names]
+        display_boards(boards, player_names, 10)
+    except SystemExit:
+        print()
 
 
 def colored(rgb, text):  # RGB Colors function
@@ -147,19 +153,16 @@ def draw_grid(width, grid, turn):
 
 
 # Zmienne są tu tymczasowo jak wymyślę co z nimi zrobić przerzucę je gdzieś indziej
-water = colored(BLUE, 'W')
-grid_friendly = [[water] * WIDTH for i in range(HEIGHT)]
-grid_enemy = [[water] * WIDTH for i in range(HEIGHT)]
+# water = colored(BLUE, 'W')
+# grid_friendly = [[water] * WIDTH for i in range(HEIGHT)]
+# grid_enemy = [[water] * WIDTH for i in range(HEIGHT)]
 
 
 #draw_grid(WIDTH, grid_friendly, 1)
-place_ships(3, (3, 8), (3, 5), "V", 2)
-draw_grid(WIDTH, grid_enemy, 1)
+# place_ships(3, (3, 8), (3, 5), "V", 2)
+# draw_grid(WIDTH, grid_enemy, 1)
 # print(list(alphabet.keys())[list(alphabet.values()).index("A")])
-# Press the green button in the gutter to run the script.
-playsound(u"sounds/background.mp3")
+# playsound(u"sounds/background.mp3")
 if __name__ == '__main__':
     game_flow()
     # test()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
