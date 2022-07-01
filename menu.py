@@ -116,3 +116,17 @@ def validate_different_player_names(players):
                 if player == players[player_index]:
                     return False
     return True
+
+
+def get_board_size(board_size_limit):
+    if not board_size_limit:
+        board_size_limit = (5, 10)
+    while True:
+        try:
+            board_size = int(input("Choose board size between", board_size_limit[0], "and", board_size_limit[1], ": "))
+            if board_size_limit[0] <= board_size <= board_size_limit[1]:
+                return board_size
+            else:
+                print("Invalid input. Board size out of range.")
+        except ValueError:
+            print("Please enter a number.")
