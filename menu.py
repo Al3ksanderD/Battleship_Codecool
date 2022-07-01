@@ -1,7 +1,7 @@
 import time
 from clint.textui import colored
 import pyfiglet
-import sys
+# import sys
 
 
 def welcome():
