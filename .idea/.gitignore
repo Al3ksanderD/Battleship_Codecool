@@ -7,4 +7,9 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 # IDE project files
-/.idea
+/Battleship_Codecool.iml
+/misc.xml
+/modules.xml
+/inspectionProfiles/profiles_settings.xml
+/inspectionProfiles/Project_Default.xml
+/vcs.xml
