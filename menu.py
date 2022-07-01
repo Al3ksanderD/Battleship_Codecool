@@ -123,7 +123,8 @@ def get_board_size(board_size_limit):
         board_size_limit = (5, 10)
     while True:
         try:
-            board_size = int(input("Choose board size between", board_size_limit[0], "and", board_size_limit[1], ": "))
+            print("Choose board size between", board_size_limit[0], "and", board_size_limit[1], ": ", end="")
+            board_size = int(input())
             if board_size_limit[0] <= board_size <= board_size_limit[1]:
                 return board_size
             else:
