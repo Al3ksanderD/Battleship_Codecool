@@ -8,6 +8,7 @@
 /httpRequests/
 # IDE project files
 /Battleship_Codecool.iml
+/Battleship.iml
 /misc.xml
 /modules.xml
 /inspectionProfiles/profiles_settings.xml
