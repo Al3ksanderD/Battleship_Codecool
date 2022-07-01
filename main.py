@@ -45,6 +45,24 @@ def colored(rgb, text):  # RGB Colors function
 def ai_ship_generator():
     pass
 
+def shoot_ship(grid, input_xy, points):
+    """
+    grid: The grid that we pass, friendly or enemy
+    input_xy: The cords of the intended shot
+    points: if hit we add point to the player that made the shot
+    """
+    cord_x = input_xy[0]
+    cord_y = input_xy[1] - 1
+    target_hit = colored(RED, "T")
+    missed_shot = colored(GREY, "M")
+    check_grid = (grid[cord_y][cord_x] == "\x1b[38;2;71;192;70mS \x1b[38;2;255;255;255m")
+    if check_grid:
+        grid[cord_y][cord_x] = target_hit
+        points += 1
+        return points
+    else:
+        grid[cord_y][cord_x] = missed_shot
+        
 
 def place_ships(size, startingXY, lastXY, position, player):
     """
