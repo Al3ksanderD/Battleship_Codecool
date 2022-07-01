@@ -24,13 +24,32 @@ AI_names = ["Hermes", "Pilot", "Pan Tadeusz", "Shooting Duck", "Houston", "Afrod
 # Functions
 
 
-def game_flow():
+def game_flow(game_mode=False, board_size_limit=False):
+    game_running = True
     try:
-        welcome()
-        game_mode = get_game_mode()
-        player_names = get_player_names(game_mode)
-        boards = [initialise_empty_board(player, 10) for player in player_names]
-        display_boards(boards, player_names, 10)
+        if not game_mode:
+            game_mode = get_game_mode()
+        board_size = get_board_size(board_size_limit)
+        boards = initialise_empty_boards(get_player_names(game_mode), board_size)
+        phase = "ship placement"
+        for player in boards.keys():
+            display_board(boards, player, phase, board_size)
+            get_ships_placement(determine_ship_lengths(board_size), player)
+        phase = "shooting"
+        while game_running:
+            for player in boards.keys():
+                display_board(boards, player, phase, board_size)
+
+    except ValueError:
+        print(ValueError)
+        try:
+            decision = input("Would you like to try again choosing a board size within the limit range? y/n")
+            if decision.lowercase() == "y" or decision.lowercase() == "yes":
+                game_flow(game_mode, (5, 10))
+            elif decision.lowercase() == "n" or decision.lowercase() == "no":
+                goodbye()
+        except SystemExit:
+            print()
     except SystemExit:
         print()
 
