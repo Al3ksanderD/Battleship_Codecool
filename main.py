@@ -17,9 +17,6 @@ alphabet = {
         14: 'N', 15: 'O', 16: 'P', 17: 'Q', 18: 'R', 19: 'S', 20: 'T', 21: 'U', 22: 'V', 23: 'W', 24: 'X', 25: 'Y',
         26: 'Z'
         }
-AI_names = ["Hermes", "Pilot", "Pan Tadeusz", "Shooting Duck", "Houston", "Afrodyta", "Kira", "Dr. Strange",
-            "Jełgeniusz Majewski", "Jegomość Skroniawski", "Miss Burza", "Oragon", "Pretensyja", "Zhang",
-            "Joanna Jędrzejczyk", "Minor", "Per Haps", "Kierownik masztu", "Piekielna Matylka", "Hitchhiker"]
 
 # Functions
 
