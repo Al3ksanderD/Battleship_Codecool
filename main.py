@@ -182,5 +182,6 @@ def draw_grid(width, grid, turn):
 # print(list(alphabet.keys())[list(alphabet.values()).index("A")])
 # playsound(u"sounds/background.mp3")
 if __name__ == '__main__':
+    welcome()
     game_flow()
     # test()
