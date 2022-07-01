@@ -68,17 +68,17 @@ def goodbye():
 
 
 def get_player_names(game_mode):
-    Human_vs_Human = 1
-    Human_vs_AI = 2
-    AI_vs_AI = 3
-    if game_mode == Human_vs_Human or game_mode == Human_vs_AI:
-        AI_names = ["Hermes", "Pilot", "Pan Tadeusz", "Shooting Duck", "Houston", "Afrodyta", "Kira", "Dr. Strange",
+    human_vs_human = 1
+    human_vs_ai = 2
+    ai_vs_ai = 3
+    if game_mode == human_vs_human or game_mode == human_vs_ai:
+        ai_names = ["Hermes", "Pilot", "Pan Tadeusz", "Shooting Duck", "Houston", "Afrodyta", "Kira", "Dr. Strange",
                     "Jełgeniusz Majewski", "Jegomość Skroniawski", "Miss Burza", "Oragon", "Pretensyja", "Zhang",
                     "Joanna Jędrzejczyk", "Minor", "Per Haps", "Kierownik masztu", "Piekielna Matylka", "Hitchhiker"]
     players = []
     second_name_entered = False
     second_player_name = False
-    if game_mode == Human_vs_Human:
+    if game_mode == human_vs_human:
         players.append(input("First player, please enter your name: "))
         while not second_name_entered:
             second_player_name = input("Second player, please enter your name: ")
@@ -90,20 +90,20 @@ def get_player_names(game_mode):
             else:
                 print("It seems as though names of two players are same. Please try again.")
         players.append(second_player_name)
-    elif game_mode == Human_vs_AI:
+    elif game_mode == human_vs_ai:
         from random import choice
         players.append(input("Please enter your name: "))
         while not second_name_entered:
-            second_player_name = choice(AI_names)
+            second_player_name = choice(ai_names)
             if second_player_name is False or second_player_name == "":
                 continue
             second_name_entered = validate_different_player_names([players[0], second_player_name])
             if second_name_entered:
                 print("Thank you.")
         players.append(second_player_name)
-    elif game_mode == AI_vs_AI:
+    elif game_mode == ai_vs_ai:
         from random import sample
-        players = sample(AI_names, 2)
+        players = sample(ai_names, 2)
     return players
 
 
