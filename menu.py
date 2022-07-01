@@ -73,3 +73,14 @@ def get_player_names(game_mode):
         players.append(input("First player, enter your name: "))
         players.append(input("Second player, enter your name: "))
     return players
+
+
+def validate_different_player_names(players):
+    """Takes in an arbitrary length array of strings and compare them for differences.
+    If names are different return True, else return False"""
+    for current_player_index, player in enumerate(players):
+        for player_index in range(current_player_index + 1, len(players)):
+            if current_player_index != player_index:
+                if player == players[player_index]:
+                    return False
+    return True
