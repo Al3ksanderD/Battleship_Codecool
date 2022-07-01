@@ -31,12 +31,12 @@ def game_flow(game_mode=False, board_size_limit=False):
         phase = "ship placement"
         for player in boards.keys():
             display_board(boards, player, phase, board_size)
-            get_ships_placement(determine_ship_lengths(board_size), player)
+            get_ships_placement(determine_ship_lengths(board_size), player, game_mode)
         phase = "shooting"
         while game_running:
             for player in boards.keys():
                 display_board(boards, player, phase, board_size)
-
+                get_shot_coordinates(boards, player, game_mode)
     except ValueError:
         print(ValueError)
         try:
