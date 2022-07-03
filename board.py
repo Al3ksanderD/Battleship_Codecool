@@ -1,5 +1,5 @@
 from collections import OrderedDict
-
+from constants import *
 
 class Ship:
     def __init__(self, length, start_field: tuple, end_field: tuple, board: list, other_ships: list):
@@ -30,7 +30,7 @@ def initialise_empty_boards(players, board_size=10):
     Keys: Names of players
     Values: dict: {"ship_placement": List List [List], "shooting": List [List]}"""
     board_size_limits = (5, 10)
-    if board_size_limits[0] > board_size > board_size_limits[1]:
+    if board_size_limits[0] > board_size or board_size > board_size_limits[1]:
         raise ValueError("Board of such dimensions cannot be initialised. Must be in size limits.")
     boards = OrderedDict()
     for player in players:
@@ -50,11 +50,6 @@ def display_board(boards: OrderedDict, player, phase, board_dimensions: int = Fa
     phase: "ship placement" or "shooting".
     board_dimensions: int, optional"""
 
-    row_index_to_letter = {
-        0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M',
-        13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y',
-        25: 'Z'
-    }
     if not board_dimensions:
         board_dimensions = len(boards[player][phase])
     if phase == "ship placement" and player in boards:

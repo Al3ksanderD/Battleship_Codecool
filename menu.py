@@ -68,10 +68,11 @@ def goodbye():
 
 
 def get_player_names(game_mode):
+    # TODO stałe
     human_vs_human = 1
     human_vs_ai = 2
     ai_vs_ai = 3
-    if game_mode == human_vs_human or game_mode == human_vs_ai:
+    if game_mode == ai_vs_ai or game_mode == human_vs_ai:
         ai_names = ["Hermes", "Pilot", "Pan Tadeusz", "Shooting Duck", "Houston", "Afrodyta", "Kira", "Dr. Strange",
                     "Jełgeniusz Majewski", "Jegomość Skroniawski", "Miss Burza", "Oragon", "Pretensyja", "Zhang",
                     "Joanna Jędrzejczyk", "Minor", "Per Haps", "Kierownik masztu", "Piekielna Matylka", "Hitchhiker"]
@@ -84,7 +85,7 @@ def get_player_names(game_mode):
             second_player_name = input("Second player, please enter your name: ")
             if second_player_name is False or second_player_name == "":
                 continue
-            second_name_entered = validate_different_player_names([players[0], second_player_name])
+            second_name_entered = are_player_names_different([players[0], second_player_name])
             if second_name_entered:
                 print("Thank you.")
             else:
@@ -97,7 +98,7 @@ def get_player_names(game_mode):
             second_player_name = choice(ai_names)
             if second_player_name is False or second_player_name == "":
                 continue
-            second_name_entered = validate_different_player_names([players[0], second_player_name])
+            second_name_entered = are_player_names_different([players[0], second_player_name])
             if second_name_entered:
                 print("Thank you.")
         players.append(second_player_name)
@@ -107,7 +108,7 @@ def get_player_names(game_mode):
     return players
 
 
-def validate_different_player_names(players):
+def are_player_names_different(players):
     """Takes in an arbitrary length array of strings and compare them for differences.
     If names are different return True, else return False"""
     for current_player_index, player in enumerate(players):
@@ -120,6 +121,8 @@ def validate_different_player_names(players):
 
 def get_board_size(board_size_limit):
     if not board_size_limit:
+        # TODO
+
         board_size_limit = (5, 10)
     while True:
         try:

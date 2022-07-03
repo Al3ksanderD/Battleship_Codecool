@@ -3,25 +3,15 @@ from menu import *
 from tests import *
 from playsound import playsound
 from coordinates import *
+from constants import *
 
 # Constant values
-HEIGHT = 10  # Póki co ustawiłem jak stałe wartości ale jak dorobię funkcję do zmiany rozmiaru
-WIDTH = 10  # planszy to to zmienię
-BLUE = (57, 197, 243)
-RED = (255, 37, 88)
-GREEN = (71, 192, 70)
-
-global water, grid_friendly, grid_enemy, alphabet
-alphabet = {
-        1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E', 6: 'F', 7: 'G', 8: 'H', 9: 'I', 10: 'J', 11: 'K', 12: 'L', 13: 'M',
-        14: 'N', 15: 'O', 16: 'P', 17: 'Q', 18: 'R', 19: 'S', 20: 'T', 21: 'U', 22: 'V', 23: 'W', 24: 'X', 25: 'Y',
-        26: 'Z'
-        }
 
 # Functions
 
 
 def game_flow(game_mode=False, board_size_limit=False):
+    # TODO game mode validation
     game_running = True
     try:
         if not game_mode:
@@ -37,16 +27,17 @@ def game_flow(game_mode=False, board_size_limit=False):
             for player in boards.keys():
                 display_board(boards, player, phase, board_size)
                 get_shot_coordinates(boards, player, game_mode)
-    except ValueError:
-        print(ValueError)
-        try:
-            decision = input("Would you like to try again choosing a board size within the limit range? y/n")
-            if decision.lowercase() == "y" or decision.lowercase() == "yes":
-                game_flow(game_mode, (5, 10))
-            elif decision.lowercase() == "n" or decision.lowercase() == "no":
-                goodbye()
-        except SystemExit:
-            print()
+    # TODO : check below
+    # except ValueError:
+    #     print(ValueError)
+    #     try:
+    #         decision = input("Would you like to try again choosing a board size within the limit range? y/n")
+    #         if decision.lowercase() == "y" or decision.lowercase() == "yes":
+    #             game_flow(game_mode, (5, 10))
+    #         elif decision.lowercase() == "n" or decision.lowercase() == "no":
+    #             goodbye()
+    #     except SystemExit:
+    #         print()
     except SystemExit:
         print()
 
@@ -60,6 +51,7 @@ def colored(rgb, text):  # RGB Colors function
 
 def ai_ship_generator():
     pass
+
 
 def shoot_ship(grid, input_xy, points):
     """
